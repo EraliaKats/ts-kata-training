@@ -48,32 +48,34 @@ return numOfErrors
 */
 
 export function printerError(controlStr: string): string {
+  let errorOccurances = 0;
 
-  let errorOccurances = 0
-
-  const lettersInStr = controlStr.length
+  const lettersInStr = controlStr.length;
 
   if (isValidControlStr(controlStr)) {
-    return `0/${lettersInStr}`
-  } 
-  else {
-    errorOccurances = countErrorOccurances(controlStr)
-    return `${errorOccurances}/${lettersInStr}`
+    return `0/${lettersInStr}`;
+  } else {
+    errorOccurances = countErrorOccurances(controlStr);
+    return `${errorOccurances}/${lettersInStr}`;
   }
 }
 
 export function isValidControlStr(controlStr: string): boolean {
-  const letters = controlStr.split("")
-  const invalidLetters =letters.filter((letter: string)=> letter < "a" || letter > "m")
-  if (invalidLetters.length>0){
-    return false
+  const letters = controlStr.split("");
+  const invalidLetters = letters.filter(
+    (letter: string) => letter < "a" || letter > "m",
+  );
+  if (invalidLetters.length > 0) {
+    return false;
   }
-  return true
+  return true;
 }
 
 export function countErrorOccurances(controlStr: string): number {
-  const letters = controlStr.split("")
-  const invalidLetters =letters.filter((letter: string)=> letter < "a" || letter > "m")
-  const numOfErrors = invalidLetters.length
-  return numOfErrors
+  const letters = controlStr.split("");
+  const invalidLetters = letters.filter(
+    (letter: string) => letter < "a" || letter > "m",
+  );
+  const numOfErrors = invalidLetters.length;
+  return numOfErrors;
 }
