@@ -191,4 +191,10 @@ module.exports = {
 
   // Whether to use watchman for file crawling
   // watchman: true,
+  preset: 'ts-jest',
+  testEnvironment: 'node',
+  transform: {
+    '^.+\\.ts?$': 'ts-jest',
+  },
+  transformIgnorePatterns: ['<rootDir>/node_modules/'],
 };
